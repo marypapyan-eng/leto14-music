@@ -14,7 +14,7 @@ const stats = [
 
 export default function AboutSection() {
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section className="relative py-16 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0f] via-[#0d0118] to-[#0a0a0f]" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-purple-800/10 rounded-full blur-[100px] pointer-events-none" />
 

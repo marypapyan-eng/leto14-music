@@ -25,7 +25,7 @@ const projects = [
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="relative py-24 overflow-hidden">
+    <section id="projects" className="relative py-16 overflow-hidden">
       <div className="absolute inset-0 bg-[#0a0a0f]" />
 
       {/* Background accents */}

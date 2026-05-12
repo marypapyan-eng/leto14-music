@@ -25,7 +25,7 @@ const partners = [
 
 export default function PartnersSection() {
   return (
-    <section id="partners" className="relative py-24 overflow-hidden">
+    <section id="partners" className="relative py-16 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0f] via-[#0d0118] to-[#0a0a0f]" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">

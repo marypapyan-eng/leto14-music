@@ -35,11 +35,11 @@ export default function HeroSection() {
         }}
       />
 
-      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 py-32 flex flex-col items-center text-center">
+      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 pt-20 pb-10 flex flex-col items-center text-center">
 
         {/* Logo with float animation */}
         <div
-          className={`float-animation mb-10 transition-all duration-1000 ${
+          className={`float-animation mb-5 transition-all duration-1000 ${
             visible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
           }`}
           style={{ filter: 'drop-shadow(0 0 40px rgba(224,64,251,0.5))' }}
@@ -47,8 +47,8 @@ export default function HeroSection() {
           <Image
             src="/images/logo.png"
             alt="LETO14 Music"
-            width={260}
-            height={260}
+            width={190}
+            height={190}
             className="object-contain"
             priority
           />
@@ -60,24 +60,24 @@ export default function HeroSection() {
             visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >
-          <h1 className="text-7xl md:text-8xl lg:text-9xl font-black tracking-tight leading-none mb-4">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none mb-2">
             <span className="text-white">LETO</span>
             <span className="gradient-text text-glow">14</span>
           </h1>
-          <p className="text-lg md:text-xl text-white/40 font-medium tracking-[0.4em] uppercase mb-8">
+          <p className="text-base md:text-lg text-white/40 font-medium tracking-[0.4em] uppercase mb-5">
             MUSIC
           </p>
 
           {/* Slogan */}
-          <p className="text-xl md:text-2xl text-white/75 italic mb-12 max-w-xl mx-auto">
+          <p className="text-lg md:text-xl text-white/75 italic mb-7 max-w-xl mx-auto">
             «Музыка, которую хочется переслушивать»
           </p>
 
           {/* CTA buttons */}
-          <div className="flex flex-wrap gap-5 justify-center mb-14">
+          <div className="flex flex-wrap gap-4 justify-center mb-7">
             <a
               href="#projects"
-              className="px-10 py-4 rounded-full font-bold text-base tracking-wider uppercase transition-all duration-300 text-white
+              className="px-8 py-3.5 rounded-full font-bold text-sm tracking-wider uppercase transition-all duration-300 text-white
                 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-400 hover:to-purple-500
                 shadow-lg shadow-pink-500/30 hover:shadow-pink-500/50 hover:scale-105"
             >
@@ -85,7 +85,7 @@ export default function HeroSection() {
             </a>
             <a
               href="#contacts"
-              className="px-10 py-4 rounded-full font-bold text-base tracking-wider uppercase transition-all duration-300
+              className="px-8 py-3.5 rounded-full font-bold text-sm tracking-wider uppercase transition-all duration-300
                 border-2 border-white/25 text-white/85 hover:text-white hover:border-pink-500/60 hover:bg-white/5"
             >
               Написать нам
@@ -93,12 +93,12 @@ export default function HeroSection() {
           </div>
 
           {/* Minimal equalizer — 5 bars only */}
-          <div className="flex items-end justify-center gap-2" style={{ height: 36 }}>
+          <div className="flex items-end justify-center gap-2" style={{ height: 28 }}>
             {[1, 2, 3, 4, 5].map((_, i) => (
               <div
                 key={i}
                 className={`w-2 rounded-full bg-gradient-to-t from-purple-600 to-pink-400 eq-bar-${i + 1}`}
-                style={{ height: 36, transformOrigin: 'bottom' }}
+                style={{ height: 28, transformOrigin: 'bottom' }}
               />
             ))}
           </div>
@@ -106,9 +106,9 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30">
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white/30">
         <span className="text-xs tracking-widest uppercase">Scroll</span>
-        <div className="w-px h-12 bg-gradient-to-b from-white/30 to-transparent animate-pulse" />
+        <div className="w-px h-8 bg-gradient-to-b from-white/30 to-transparent animate-pulse" />
       </div>
     </section>
   );
