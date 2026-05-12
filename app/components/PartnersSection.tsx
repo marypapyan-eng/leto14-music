@@ -17,8 +17,8 @@ const partners = [
   },
   {
     name: 'Солнечный круг',
-    logo: null,
-    description: 'Партнёр',
+    logo: '/images/solnechny_krug.png',
+    description: 'Студия',
     dark: false,
   },
 ];
