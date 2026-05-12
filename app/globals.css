@@ -1,26 +1,161 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0f;
+  --foreground: #ffffff;
+  --pink: #e040fb;
+  --purple: #9333ea;
+  --pink-dark: #c026d3;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-pink: var(--pink);
+  --color-purple: var(--purple);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0f;
+}
+::-webkit-scrollbar-thumb {
+  background: #e040fb;
+  border-radius: 3px;
+}
+
+/* Vinyl spin animation */
+@keyframes spin-vinyl {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Equalizer bar animation — HTML divs use height %, SVG rects use scaleY */
+@keyframes eq-bar-1 {
+  0%, 100% { transform: scaleY(0.2); }
+  25% { transform: scaleY(0.8); }
+  50% { transform: scaleY(0.4); }
+  75% { transform: scaleY(0.9); }
+}
+@keyframes eq-bar-2 {
+  0%, 100% { transform: scaleY(0.6); }
+  25% { transform: scaleY(0.3); }
+  50% { transform: scaleY(0.9); }
+  75% { transform: scaleY(0.2); }
+}
+@keyframes eq-bar-3 {
+  0%, 100% { transform: scaleY(0.4); }
+  25% { transform: scaleY(0.7); }
+  50% { transform: scaleY(0.2); }
+  75% { transform: scaleY(0.6); }
+}
+@keyframes eq-bar-4 {
+  0%, 100% { transform: scaleY(0.7); }
+  25% { transform: scaleY(0.4); }
+  50% { transform: scaleY(0.8); }
+  75% { transform: scaleY(0.3); }
+}
+@keyframes eq-bar-5 {
+  0%, 100% { transform: scaleY(0.3); }
+  25% { transform: scaleY(0.9); }
+  50% { transform: scaleY(0.5); }
+  75% { transform: scaleY(0.7); }
+}
+
+.eq-bar-1 { animation: eq-bar-1 1.2s ease-in-out infinite; transform-box: fill-box; transform-origin: bottom; }
+.eq-bar-2 { animation: eq-bar-2 0.9s ease-in-out infinite; transform-box: fill-box; transform-origin: bottom; }
+.eq-bar-3 { animation: eq-bar-3 1.5s ease-in-out infinite; transform-box: fill-box; transform-origin: bottom; }
+.eq-bar-4 { animation: eq-bar-4 1.1s ease-in-out infinite; transform-box: fill-box; transform-origin: bottom; }
+.eq-bar-5 { animation: eq-bar-5 0.8s ease-in-out infinite; transform-box: fill-box; transform-origin: bottom; }
+
+.vinyl-spin {
+  animation: spin-vinyl 4s linear infinite;
+}
+
+/* Glow effects */
+.glow-pink {
+  box-shadow: 0 0 20px rgba(224, 64, 251, 0.4), 0 0 60px rgba(224, 64, 251, 0.2);
+}
+.text-glow {
+  text-shadow: 0 0 20px rgba(224, 64, 251, 0.6), 0 0 40px rgba(224, 64, 251, 0.3);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #e040fb, #9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card hover */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(224, 64, 251, 0.3);
+}
+
+/* Nav link */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #e040fb, #9333ea);
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Noise overlay for depth */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.4;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
 }
