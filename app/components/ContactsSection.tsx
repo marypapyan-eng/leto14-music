@@ -14,8 +14,8 @@ const socials = [
   },
   {
     name: 'ВКонтакте',
-    handle: 'leto14_music',
-    url: 'https://vk.com/leto14_music',
+    handle: 'leto14music',
+    url: 'https://vk.com/leto14music',
     icon: (
       <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
         <path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.408 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.862-.523-2.049-1.712-1.033-1.01-1.49-.9-1.49-.9s-.15.18-.15.52v1.562c0 .4-.13.53-.75.53-1.104 0-2.33-.067-3.598-1.37C8.293 14.27 7.4 12.16 7.4 12.01c0-.09.06-.18.18-.18h1.742c.24 0 .33.1.39.29.36 1.04 1.17 2.16 1.484 2.16.1 0 .18-.04.18-.34V11.4c-.07-1.09-.68-1.19-.68-1.585 0-.18.147-.36.367-.36h2.74c.207 0 .29.1.29.37v3.27c0 .22.097.3.15.3.1 0 .19-.08.39-.29.66-.75 1.13-1.89 1.13-1.89.07-.15.2-.3.4-.3h1.743c.52 0 .64.25.52.52-.22.94-2.16 3.6-2.16 3.6-.09.14-.12.2 0 .37.09.13.39.4.6.64.57.57 1.01 1.05 1.13 1.39.14.33-.03.5-.37.5z" />
@@ -34,7 +34,7 @@ export default function ContactsSection() {
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-pink-600/10 rounded-full blur-[80px]" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-pink-500/30 bg-pink-500/10 text-pink-400 text-xs font-medium tracking-widest uppercase">
             Контакты
           </div>
@@ -57,10 +57,10 @@ export default function ContactsSection() {
             <span className="text-white/50 text-sm tracking-widest uppercase">Email</span>
           </div>
           <a
-            href="mailto:info@leto14music.ru"
+            href="mailto:hello@leto14music.ru"
             className="text-2xl font-semibold text-white hover:text-pink-400 transition-colors"
           >
-            info@leto14music.ru
+            hello@leto14music.ru
           </a>
         </div>
 

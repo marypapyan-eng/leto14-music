@@ -7,25 +7,25 @@ const projects = [
     name: 'Дарина Набока',
     description: 'Яркий голос и живые эмоции — музыка, которую чувствуешь кожей.',
     genre: 'Поп',
-    image: '/images/darina_project.jpeg',
+    image: '/images/darina_project.jpg',
   },
   {
     name: 'Турбозавры',
     description: 'Энергия и драйв — детская музыка, от которой невозможно устоять.',
     genre: 'Детская',
-    image: '/images/turbozaurs_project.png',
+    image: '/images/turbozaurs_project.jpg',
   },
   {
     name: 'Хранители Вкусов',
     description: 'Атмосферное звучание с авторским почерком и глубиной.',
-    genre: 'Авторская',
-    image: '/images/guardians_project.png',
+    genre: 'Детская',
+    image: '/images/guardians_project.jpg',
   },
 ];
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="relative py-16 overflow-hidden">
+    <section id="projects" className="relative py-10 overflow-hidden">
       <div className="absolute inset-0 bg-[#0a0a0f]" />
 
       {/* Background accents */}
@@ -34,13 +34,10 @@ export default function ProjectsSection() {
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         {/* Section header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-pink-500/30 bg-pink-500/10 text-pink-400 text-xs font-medium tracking-widest uppercase">
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-pink-500/30 bg-pink-500/10 text-pink-400 text-sm font-bold tracking-widest uppercase">
             Проекты
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-white">
-            Наши <span className="gradient-text">артисты</span>
-          </h2>
         </div>
 
         {/* Projects grid */}
@@ -51,13 +48,14 @@ export default function ProjectsSection() {
               className="project-card group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5"
             >
               {/* Image or placeholder */}
-              <div className="relative aspect-[3/4] overflow-hidden">
+              <div className="relative overflow-hidden">
                 {project.image ? (
                   <Image
                     src={project.image}
                     alt={project.name}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    width={1085}
+                    height={1450}
+                    className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
                   />
                 ) : (
                   <div className="w-full h-full bg-gradient-to-br from-[#1a0a2e] to-[#0d0118] flex flex-col items-center justify-center gap-4">
@@ -76,8 +74,6 @@ export default function ProjectsSection() {
                   </div>
                 )}
 
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
 
                 {/* Genre badge */}
                 <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-pink-500/20 border border-pink-500/30 text-pink-300 text-xs font-medium tracking-wider">

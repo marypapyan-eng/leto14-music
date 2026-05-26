@@ -1,20 +1,10 @@
-'use client';
-
-import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 export default function HeroSection() {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const t = setTimeout(() => setVisible(true), 100);
-    return () => clearTimeout(t);
-  }, []);
-
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0f] via-[#100418] to-[#0a0a0f]" />
@@ -39,9 +29,7 @@ export default function HeroSection() {
 
         {/* Logo with float animation */}
         <div
-          className={`float-animation mb-5 transition-all duration-1000 ${
-            visible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
-          }`}
+          className="float-animation mb-5"
           style={{ filter: 'drop-shadow(0 0 40px rgba(224,64,251,0.5))' }}
         >
           <Image
@@ -55,11 +43,7 @@ export default function HeroSection() {
         </div>
 
         {/* Main heading */}
-        <div
-          className={`transition-all duration-1000 delay-200 ${
-            visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-          }`}
-        >
+        <div>
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none mb-2">
             <span className="text-white">LETO</span>
             <span className="gradient-text text-glow">14</span>
@@ -105,11 +89,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white/30">
-        <span className="text-xs tracking-widest uppercase">Scroll</span>
-        <div className="w-px h-8 bg-gradient-to-b from-white/30 to-transparent animate-pulse" />
-      </div>
     </section>
   );
 }

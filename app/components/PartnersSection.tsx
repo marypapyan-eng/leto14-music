@@ -12,24 +12,30 @@ const partners = [
   {
     name: 'Маурис Филм',
     logo: '/images/mauris.png',
-    description: 'Кинопроизводство',
+    description: 'Дистрибуция',
     dark: true,
   },
   {
     name: 'Солнечный круг',
     logo: '/images/solnechny_krug.png',
-    description: 'Студия',
+    description: 'Кинопроизводство',
+    dark: false,
+  },
+  {
+    name: 'Мэджик Фэктори',
+    logo: '/images/magic.jpg',
+    description: 'Кинопроизводство',
     dark: false,
   },
 ];
 
 export default function PartnersSection() {
   return (
-    <section id="partners" className="relative py-16 overflow-hidden">
+    <section id="partners" className="relative py-10 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0f] via-[#0d0118] to-[#0a0a0f]" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-pink-500/30 bg-pink-500/10 text-pink-400 text-xs font-medium tracking-widest uppercase">
             Партнёры
           </div>
@@ -38,16 +44,17 @@ export default function PartnersSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {partners.map((partner) => (
             <div
               key={partner.name}
-              className="group flex flex-col items-center justify-center p-12 rounded-2xl
+              className="group flex flex-col items-center justify-center p-6 rounded-2xl
                 border border-white/10 bg-white/5 backdrop-blur-sm
                 hover:border-pink-500/30 hover:bg-white/[0.08] transition-all duration-300 hover:-translate-y-2"
             >
+              <p className="mb-4 text-white/40 text-sm tracking-wider text-center">{partner.description}</p>
               {partner.logo ? (
-                <div className="relative w-full max-w-[200px] h-20">
+                <div className="relative w-full max-w-[280px] h-32">
                   <Image
                     src={partner.logo}
                     alt={partner.name}
@@ -80,8 +87,6 @@ export default function PartnersSection() {
                   </div>
                 </div>
               )}
-              <p className="mt-6 text-white font-semibold text-lg text-center">{partner.name}</p>
-              <p className="text-white/40 text-sm tracking-wider mt-1">{partner.description}</p>
             </div>
           ))}
         </div>

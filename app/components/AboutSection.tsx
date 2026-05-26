@@ -21,7 +21,7 @@ export default function AboutSection() {
       <div className="relative z-10 max-w-5xl mx-auto px-6">
 
         {/* Badge */}
-        <div className="flex justify-center mb-12">
+        <div className="flex justify-center mb-8">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-pink-500/30 bg-pink-500/10 text-pink-400 text-xs font-medium tracking-widest uppercase">
             О нас
           </div>
@@ -67,18 +67,6 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* Stats row */}
-        <div className="mt-16 grid grid-cols-3 divide-x divide-white/10 border border-white/10 rounded-2xl overflow-hidden">
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="flex flex-col items-center justify-center py-8 px-4 bg-white/5"
-            >
-              <div className="text-3xl font-black gradient-text mb-1">{stat.value}</div>
-              <div className="text-xs text-white/40 tracking-widest uppercase">{stat.label}</div>
-            </div>
-          ))}
-        </div>
 
       </div>
     </section>
